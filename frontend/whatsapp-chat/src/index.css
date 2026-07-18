@@ -1,0 +1,109 @@
+:root {
+  --bg-primary: #f4f6f9;
+  --bg-secondary: #ffffff;
+  --accent-green: #25d366;
+  --accent-teal: #128c7e;
+  --accent-hover: #1ebd5b;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-glow: rgba(37, 211, 102, 0.06);
+  --danger-color: #ef4444;
+  --success-color: #10b981;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-lg: 24px;
+  --border-radius-md: 14px;
+  --border-radius-sm: 8px;
+  --max-width: 520px;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background ambient light effects - soft light tints for light mode */
+body::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.06) 0%, rgba(37, 211, 102, 0) 70%);
+  top: -150px;
+  right: -150px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(18, 140, 126, 0.04) 0%, rgba(18, 140, 126, 0) 70%);
+  bottom: -200px;
+  left: -200px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Base button and input styling */
+input, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
